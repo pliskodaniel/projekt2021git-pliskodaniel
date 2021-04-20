@@ -1,5 +1,4 @@
 from PIL import Image
-
 def render_ves(code_list, mode):
 
   if code_list != None :
@@ -9,7 +8,6 @@ def render_ves(code_list, mode):
     else :
       lines = code_list
 
-      
 
     if lines[0][0:5] != "VES v" : 
       print("Invalid header.")
@@ -27,7 +25,6 @@ def render_ves(code_list, mode):
         height = int(resolution[(resolution.find(" ")):len(resolution) + 1])   
 
       '''
-
       if mode[0] == "w" :
         new = int(mode[1 : len(mode)])
         ratio = new/width
@@ -147,10 +144,7 @@ def render_ves(code_list, mode):
           r = (int(int(data(li)[0][2]) * ratio))
           color = (data(li)[1])
 
-          filled_circle(img, S, r, color) 
-
-
-
+          filled_circle(img, S, r, color)   
 
         elif lines[line][0:5] == "CURVE":
 
@@ -162,7 +156,7 @@ def render_ves(code_list, mode):
           thickness = int(int(data(li)[0][8]) * ratio)
           color = (data(li)[1])
 
-          curve(img, A, B, C, D, thickness, color)  
+          curve(img, A, B, C, D, thickness, color)
 
 
 
@@ -173,14 +167,10 @@ def render_ves(code_list, mode):
           print("Syntax error on line " + str(line + 1) + ": Unknown command " + (lines[line][0:((lines[line].find(" ")))]) + ".")
 
 
-    return img
+      return img
   
   else :
     pass
-
-
-
-
 
 
 def hex2dec(cislo):
@@ -240,7 +230,6 @@ def linePixels(A, B):
   return pixels
 
 
-
 def line(im, A, B, color):
   ''' Nakresli do obrazku im usecku AB farbou color '''
   l = linePixels(A, B)
@@ -273,7 +262,7 @@ def thick_line(im, A, B, thickness, color):
         #if pixels[X][0] < 0 or pixels[X][1] < 0 or pixels[X][0] > width or pixels[X][1] > height :
         #  pass
         #else :
-        help_circle(im, X, thickness, color)
+        help_circle(im, X, int(thickness / 2), color)
 
 
 def help_circle(im, S, r, color):
@@ -432,14 +421,15 @@ def curvepix(A, B, C, D):
   l12 = linePixels(B,C)
   l13 = linePixels(C,D)
   final = []
-  end = 40
+
   
-  # if len(l11) > len(l12) and len(l11) > len(l13) :
-  #   end = len(l11)
-  # elif len(l12) > len(l11) and len(l12)> len(l13) :
-  #   end = len(l12)
-  # else :
-  #   end = len(l13)
+  if len(l11) > len(l12) and len(l11) > len(l13) :
+    end = len(l11)
+  elif len(l12) > len(l11) and len(l12)> len(l13) :
+    end = len(l12)
+  else :
+    end = len(l13)
+  end = 40
 
   for pixel in range(0, end) :
     i11 = int(len(l11) / end * pixel)
@@ -507,23 +497,3 @@ def curve(im, A, B, C, D, thickness, color):
     E = l[pixel]
     F =  l[pixel + 1]
     thick_line(im, E, F, thickness, color)
-
-from PIL import Image
-from random import randint
-
-
-def random_color():
-  r = randint(0, 255)
-  g = randint(0, 255)
-  b = randint(0, 255)
-  return (r, g, b)
-
-def render_ves():
-  width = 640
-  height = 400
-  img = Image.new('RGB', (width, height), (255,255,255))
-  farba = random_color()
-  for x in range(200, 401):
-    for y in range(100, 201):
-      img.putpixel((x, y), farba)
-  return img
