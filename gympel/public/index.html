@@ -5,15 +5,24 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<header>
+	<h1 id="main_heading">THIS IS A HEADING</h1>
+</header>
 <section>
 	<form method="POST" action="/render">
-		<button>Zobraziť</button>
 		<textarea name="ves"></textarea>
+		<button id="draw">Zobraziť</button>
 	</form>
+	<div id="image">
+	<img id="output" />
+    </div>
 </section>
 <section>
-	<img id="output" />
+	
 </section>
 <script type="text/javascript" src="script.js" ></script>
+<footer>
+	<p>VES</p>
+</footer>
 </body>
 </html>
