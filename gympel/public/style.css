@@ -1,18 +1,54 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: Arial,  sans-serif;
 }
 body {
+	
+	background-color: lightblue;
+}
+section {
+	
+    border: 2px red;
 	display: flex;
+
 }
-body > section {
-	flex-basis: 50%;
-}
-textarea {
+header {
 	width: 100%;
+	background-color: blue;
+	text-align: center;
+	color: white;
+}
+textarea{
+	width: 90%;
 	height: 90vh;
+	margin: 10px;
+	
 }
 img {
 	width: 100%;
 	height: auto;
+	display: block;
+	margin-top: 10vh;
+	margin-bottom: 4vh;
+	background: none;
+}
+button{
+	display: flex;
+    justify-content: center;
+	margin: auto;
+	background-color: darkblue; 
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 30px;
+	vertical-align: middle;
+	width: auto;
+}
+footer{
+	background-color: blue;
+	text-align: center;
+	color: white;
+	height: 200px;
 }
