@@ -5,42 +5,58 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
 <header>
-	<h1 id="main_heading">Draw online in<br>VECTOR SCRIPT<br><a style="text-align:center;color:black;background-color:white;" href="index.html#stred">SPUSTIŤ</a><a  href="index.html#footer">Príkazy</a></h1>
 	<img id="intro" src="https://techyhost.com/wp-content/uploads/2019/02/Free-Vector-Software.jpg">
-
+	<div>
+	<h1 id="main_heading">Welcome to<br>VECTOR SCRIPT</h1>
+		<nav>
+			<a id="start" href="#editor">START</a>
+			<a id="cmd" href="#commands">COMMANDS</a>
+		</nav>
+	</div>
 </header>
-
-<section>
-	<form id = "stred" method="POST" action="/render">
-		<textarea name="ves" placeholder="Write VES code here..."></textarea>
+<section id="editor">
+	<form method="POST" action="/render">
+		<textarea name="ves" >VES v1.0 1280 720</textarea>
 		<button id="draw">RENDER</button>
 	</form>
 	<div id="image">
 	<img id="output" />
     </div>
 </section>
-<section>
-	
+<section id="commands">
+	<ul id="explain"> 
+		<li>HEADER version width height</li>
+		<li>CLEAR color (set canvas)</li>
+		<li>LINE A B thichness color</li>
+		<li>TRIANGLE A B C thichness color</li>
+		<li>FILL_TRIANGLE A B C  color</li>
+		<li>RECT A B thichness color</li>
+		<li>FILL_RECT A B color</li>
+		<li>CIRCLE S radius thichness color</li>
+		<li>FILL_CIRCLE S radius color</li>			
+		<li>CURVE A B C D thichness color</li>
+	</ul>
+	<ul id="syntax"> 
+		<li>VES v1.0 600 300</li>
+		<li>CLEAR #FAFAFA</li>
+		<li>LINE 349 206 344 207 2 #FEDCBA</li>
+		<li>TRIANGLE 50 100 200 300 150 200 1 #00FF00</li>
+		<li>FILL_TRIANGLE 200 100 400 300 300 300 #0000FF</li>
+		<li>RECT 200 100 500 300 1 #000000</li>
+		<li>FILL_RECT 400 100 550 300 #00FF00</li>
+		<li>CIRCLE 300 200 100 1 #FFFFFF</li>
+		<li>FILL_CIRCLE 200 100 50 #00FF00</li>			
+		<li>CURVE 20 500 50 11 476 480 604 26 3 #00148f</li>
+	</ul>
 </section>
 <script type="text/javascript" src="script.js" ></script>
-<h1> Príkazy</h1>
-<footer id = "footer">
-	<br>
-		<ul> 
-			<li>CURVE A B C D hrúbka farba</li>
-			<li>FILL_TRIANGLE A B C  farba</li>
-			<li>FILL_RECT A B farba</li>
-			<li>CIRCLE S hrúbka farba</li>
-			<li>TRIANGLE A B C hrúbka farba</li>
-			<li>RECT A B C D hrúbka farba</li>
-			<li>LINE A B hrúbka farba</li>
-
-
-
-
-	</ul>
+<footer>
+	<a href="https://github.com/pliskodaniel/projekt2021git-pliskodaniel"><img id="github" src="https://image.flaticon.com/icons/png/512/25/25231.png"></a>
+	<p>Dominika Karpišová</p>
+	<p>Erich Abt</p>
+	<p>Peter Podolínsky</p>
+	<p>Daniel Pliško</p>
 </footer>
 </body>
 </html>
